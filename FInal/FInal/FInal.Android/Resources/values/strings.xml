@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string name="app_name">FInal.Droid</string>
+	<string name="facebook_app_name">final</string>
+	<string name="facebook_app_id">177129967409641</string>
+	<string name="fb_login_protocol_scheme">fb177129967409641</string>
 </resources>
