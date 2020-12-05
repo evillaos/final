@@ -28,6 +28,7 @@ namespace FInal
             containerRegistry.RegisterSingleton<IAppInfo, AppInfoImplementation>();
             containerRegistry.Register<IApiService, ApiService>();
             containerRegistry.Register<IGeolocatorService, GeolocatorService>();
+
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
             containerRegistry.RegisterForNavigation<LoginPage, LoginPageViewModel>();

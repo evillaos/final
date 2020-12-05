@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Plugin.Geolocator;
+using Plugin.Geolocator.Abstractions;
 
 namespace FInal.Common.Services
 {
@@ -14,9 +15,9 @@ namespace FInal.Common.Services
         {
             try
             {
-                var locator = CrossGeolocator.Current;
+                IGeolocator locator = CrossGeolocator.Current;
                 locator.DesiredAccuracy = 50;
-                var location = await locator.GetPositionAsync();
+                Position location = await locator.GetPositionAsync();
                 Latitude = location.Latitude;
                 Longitude = location.Longitude;
 

@@ -11,16 +11,19 @@
                      AbsoluteLayout.LayoutFlags="All" 
                      Padding="5">
 
-            <StackLayout VerticalOptions="EndAndExpand">
+            <StackLayout VerticalOptions="CenterAndExpand">
 
                 <Button BackgroundColor="#4768AD" 
                         Command="{Binding LoginFacebookCommand}"
                         HeightRequest="45"
                         IsEnabled="{Binding IsEnabled}"
                         ImageSource="ic_fb"
-                        Text= "LoginFacebook"
+                        Text= "Login with Facebook"
                         TextColor="#FFFFFF"/>
+                <Label Text="from" HorizontalOptions="CenterAndExpand"/>
+                <Label Text="FACEBOOK!" HorizontalOptions="CenterAndExpand"/>
             </StackLayout>
+            
         </StackLayout>
     </AbsoluteLayout>
 </ContentPage>

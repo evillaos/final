@@ -54,7 +54,7 @@
             </Grid>
             
                 <maps:Map x:Name="MyMap"
-                  MapType="Street">
+                  MapType="Satellite">
                 </maps:Map>
            
 

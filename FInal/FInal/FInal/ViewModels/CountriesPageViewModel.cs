@@ -18,8 +18,6 @@ namespace FInal.ViewModels
         private readonly INavigationService _navigationService;
         private bool _isEnabled;
         private readonly IApiService _apiService;
-        private Country _country;
-        private ObservableCollection<Country> _countries;
         private string _Name;
         private string _LastName;
         private string _Email;
@@ -31,7 +29,6 @@ namespace FInal.ViewModels
             _apiService = apiService;
             Title = "Countries";
             IsEnabled = true;
-            LoadCountriesAsync();
         }
 
         public string FirstName
@@ -92,46 +89,7 @@ namespace FInal.ViewModels
             set => SetProperty(ref _isEnabled, value);
         }
 
-        public Country Country
-        {
-            get => _country;
-            set
-            {
-                SetProperty(ref _country, value);
-            }
-        }
 
-        public ObservableCollection<Country> Countries
-        {
-            get => _countries;
-            set => SetProperty(ref _countries, value);
-        }
-
-        private async void LoadCountriesAsync()
-        {
-            IsEnabled = false;
-
-            if (Connectivity.NetworkAccess != NetworkAccess.Internet)
-            {
-                IsEnabled = true;
-                await App.Current.MainPage.DisplayAlert("Error","connection error", "Aceptar");
-                return;
-            }
-
-
-            string url = "https://restcountries.eu/";
-            Response response = await _apiService.GetListAsync<Country>(url, "rest/v2/all");
-            IsEnabled = true;
-
-            if (!response.IsSuccess)
-            {
-                await App.Current.MainPage.DisplayAlert("Error", response.Message, "Aceptar");
-                return;
-            }
-
-            List<Country> list = (List<Country>)response.Result;
-            //Countries = new ObservableCollection<Country>(list.OrderBy(c => c.Name));
-        }
-
+       
     }
 }
