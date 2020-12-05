@@ -1,13 +1,11 @@
 ﻿using FInal.Common.Models;
+using FInal.Views;
 using Newtonsoft.Json;
 using Plugin.FacebookClient;
 using Prism.Commands;
-using Prism.Mvvm;
 using Prism.Navigation;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace FInal.ViewModels
@@ -80,12 +78,17 @@ namespace FInal.ViewModels
 
         private async Task LoginFacebookAsync(FacebookProfile facebookProfile)
         {
-            IsEnabled = false;
 
+            IsEnabled = false;
             await App.Current.MainPage.DisplayAlert("Error", "Pasa Login", "Aceptar");
 
-            //await _navigationService.NavigateAsync($"/{nameof(OnSaleMasterDetailPage)}/NavigationPage/{nameof(ProductsPage)}");
+            var parameters = new NavigationParameters
+            {
+                { "facebookProfile", facebookProfile }
+            };
 
+            await _navigationService.NavigateAsync("CountriesPage", parameters);
+            IsEnabled = true;
         }
 
     }

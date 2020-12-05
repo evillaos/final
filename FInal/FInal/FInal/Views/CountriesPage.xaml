@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+              xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="FInal.Views.CountriesPage"
+             Title="{Binding Title}">
+
+    <AbsoluteLayout>
+        <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,1"
+                     AbsoluteLayout.LayoutFlags="All" 
+                     Padding="5">
+
+            <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <ffimageloading:CachedImage Aspect="AspectFill" Grid.Column="0"
+
+                                                Source="{Binding Picture}" 
+                                               CacheDuration= "50"
+                                                        HeightRequest="100"
+                                                        Margin="5"
+                                                        RetryCount= "3"
+                                                        RetryDelay= "600"
+                                                        WidthRequest="100">
+                <ffimageloading:CachedImage.Transformations>
+                    <fftransformations:CircleTransformation />
+                </ffimageloading:CachedImage.Transformations>
+        </ffimageloading:CachedImage>
+                    <StackLayout Grid.Column="1"
+                                     VerticalOptions="Center">
+                    <Label Text="{Binding FirstName}" 
+                                   FontAttributes="Bold"
+                                   FontSize="Medium"
+                                   LineBreakMode="TailTruncation" />
+                    <Label Text="{Binding LastName}"
+                                   LineBreakMode="TailTruncation"
+                                   FontAttributes="Italic" 
+                                   VerticalOptions="End" />
+                    <Label Text="{Binding Email}"
+                                   LineBreakMode="TailTruncation"
+                                   FontAttributes="Italic" 
+                                   VerticalOptions="End" />
+                </StackLayout>
+
+                </Grid>
+        
+        </StackLayout>
+
+    </AbsoluteLayout>
+
+</ContentPage>

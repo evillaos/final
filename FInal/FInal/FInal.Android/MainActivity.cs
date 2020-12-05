@@ -25,6 +25,7 @@ namespace FInal.Droid
 #if DEBUG
             GetAppHash();
 #endif
+            FFImageLoading.Forms.Platform.CachedImageRenderer.Init(true);
             LoadApplication(new App(new AndroidInitializer()));
         }
         private void GetAppHash()
