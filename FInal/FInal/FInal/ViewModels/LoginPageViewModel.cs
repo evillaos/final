@@ -33,7 +33,6 @@ namespace FInal.ViewModels
 
         private async void LoginFacebookAsync()
         {
-            await App.Current.MainPage.DisplayAlert("Error", "Funciona", "Aceptar");
             try
             {
 
@@ -80,7 +79,6 @@ namespace FInal.ViewModels
         {
 
             IsEnabled = false;
-            await App.Current.MainPage.DisplayAlert("Error", "Pasa Login", "Aceptar");
 
             var parameters = new NavigationParameters
             {

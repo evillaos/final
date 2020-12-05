@@ -21,6 +21,7 @@ namespace FInal.Droid
 
             base.OnCreate(savedInstanceState);
             FacebookClientManager.Initialize(this);
+            Xamarin.FormsMaps.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
 #if DEBUG
             GetAppHash();

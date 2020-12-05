@@ -5,6 +5,7 @@
               xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
              prism:ViewModelLocator.AutowireViewModel="True"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"  
              x:Class="FInal.Views.CountriesPage"
              Title="{Binding Title}">
 
@@ -49,10 +50,19 @@
                                    VerticalOptions="End" />
                 </StackLayout>
 
-                </Grid>
-        
+                
+            </Grid>
+            
+                <maps:Map x:Name="MyMap"
+                  MapType="Street">
+                </maps:Map>
+           
+
         </StackLayout>
 
+       
+        
     </AbsoluteLayout>
+    
 
 </ContentPage>
